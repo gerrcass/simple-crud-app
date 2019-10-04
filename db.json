@@ -1,0 +1,16 @@
+{
+  "comments": [
+    {
+      "id": 1,
+      "postId":123,
+      "author": "leo",
+      "content":"que tal"
+    }
+  ],
+  "posts": [
+    {
+      "id":123,
+      "content":"hola"
+    }
+  ]
+}
