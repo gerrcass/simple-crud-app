@@ -1,5 +1,5 @@
 import {handleActions} from 'redux-actions'
-import {createPost,getPosts} from '../actions'
+import {createPostSuccess,getPostsSuccess,handleApiError} from '../actions'
 
 /* function actionHandler(state,action){
     return [1,2,3]
@@ -7,10 +7,13 @@ import {createPost,getPosts} from '../actions'
 
 export default handleActions({
     //la action funciona aqui abajo asi a pesar de que es una funcion porque utiliza el metodo toString()
-    [createPost]: (state,action) =>{
+    [createPostSuccess]: (state,action) =>{
         return [...state,action.payload]
     },
-    [getPosts]: (state,action) =>{
+    [getPostsSuccess]: (state,action) =>{
         return action.payload
     },
+    [handleApiError]: (state,action) => {
+        return console.log('Manejar Error')
+    }
 },[])

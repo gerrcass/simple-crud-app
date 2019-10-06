@@ -1,13 +1,16 @@
 import {handleActions} from 'redux-actions'
-import {createComment, getComments} from '../actions'
+import {createCommentSuccess, getCommentsSuccess,handleApiError} from '../actions'
 
 export default handleActions({
-    [createComment]: (state,action) =>{
+    [createCommentSuccess]: (state,action) =>{
         return [...state,action.payload]
     },
-    [getComments]: (state,action) =>{
+    [getCommentsSuccess]: (state,action) =>{
         return action.payload
     },
+    [handleApiError]: (state,action) => {
+        return console.log('Manejar Error')
+    }
 },[])
 
 /* Before redux-actions

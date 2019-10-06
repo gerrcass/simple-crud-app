@@ -18,20 +18,8 @@ class Root extends React.Component{
        //this.props.action1(999)
        //api.comments.create({author:'1gerardo',content:'lorem'})
        const {getComments,getPosts} = this.props
-       getComments([
-        {
-          "id": 1,
-          "postId":123,
-          "author": "leo",
-          "content":"que tal"
-        }
-      ])
-       getPosts([
-        {
-          "id":123,
-          "content":"hola"
-        }
-      ])
+       getComments()
+       getPosts()
     }
 
     render(){
@@ -43,7 +31,9 @@ class Root extends React.Component{
         } = this.props
         return (
             <Layout>
-                <PostAdmin />
+                <PostAdmin
+                    createPost={createPost}
+                />
                 {posts.map(post => (
                     <Post
                         key={post.id}
@@ -54,7 +44,8 @@ class Root extends React.Component{
                         postId={post.id}
                         author="guest"
                     />
-                ))}
+                )
+                )}
             </Layout>
         )
     }
@@ -63,7 +54,7 @@ class Root extends React.Component{
 
 const mapStateToProps = (state) => {
     return {
-        comments:state.comments,
+        comments: state.comments,
         posts: state.posts
     }
 }
@@ -73,6 +64,7 @@ const mapDispatchToProps = {
     getPosts: getPostsAction,
     createComment: createCommentAction,
     getComments: getCommentsAction
+
 }
 /* const mapDispatchToProps = dispatch => {
     action1: dispatch(action1),

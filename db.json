@@ -1,16 +1,22 @@
 {
   "comments": [
     {
-      "id": 1,
-      "postId":123,
-      "author": "leo",
-      "content":"que tal"
+      "postId": 1,
+      "author": "guest",
+      "content": "COMENTARIO 1",
+      "id": 1
+    },
+    {
+      "postId": 1,
+      "author": "guest",
+      "content": "COMENTARIO 2",
+      "id": 2
     }
   ],
   "posts": [
     {
-      "id":123,
-      "content":"hola"
+      "content": "PUBLICACION 1",
+      "id": 1
     }
   ]
 }

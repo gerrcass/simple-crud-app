@@ -23,13 +23,13 @@ class Post extends React.Component{
                 }
                 {Boolean(comments.length) &&
                     <div className="card-body p-2">
-                        {comments.map((comment,idx) => (
+                        {comments.map(comment => (
                             <div
-                                key={idx}
+                                key={comment.id}
                                 className="bg-light alert alert-secondary p-2 mb-1"
                                 role="alert"
                             >
-                                <b>{comment.author}:</b>
+                                <b>{comment.author}: </b>
                                 <span>{comment.content}</span>
                             </div>
                         ))}
